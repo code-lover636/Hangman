@@ -102,7 +102,7 @@ def create_qns():
 
 def img_resize(file, WIDTH, HEIGHT):
     img = Image.open(file,)
-    img = img.resize((WIDTH, HEIGHT), Image.ANTIALIAS)
+    img = img.resize((WIDTH, HEIGHT), Image.LANCZOS)
     img = ImageTk.PhotoImage(img)
     return img
 
@@ -130,8 +130,7 @@ b5.place(x=but_place0+fact*6,y=but_place1)
 b6.place(x=but_place0+fact*7,y=but_place1)
 
 # Other Widgets
-with open("assets/score.txt","r+") as f:
-    highscore = int(f.read())
+with open("assets/score.txt","r+") as f:    highscore = int(f.read())
 cheer = Label(canvas, bg="white", fg="red", font=("INK FREE", 20, 'bold'))
 scoreboard = Label(canvas, bg="white", fg="green", font=("comic sans ms", 15, 'bold'), text="SCORE: 0", anchor='nw')
 highscoreboard = Label(canvas, bg="white", fg="green", font=("comic sans ms", 15, 'bold'), text=f"HIGH SCORE: {highscore}", anchor='nw')
